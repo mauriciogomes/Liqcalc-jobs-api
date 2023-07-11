@@ -1,0 +1,15 @@
+{
+  "name": "liqcalc-web-api",
+  "version": "1.0.0",
+  "description": "Api for personal project Liqcalc-web ",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch ./api-mock.json --port 3001",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mauricio Jacques Gomes",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.3"
+  }
+}
