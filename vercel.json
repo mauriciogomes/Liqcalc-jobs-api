@@ -9,5 +9,11 @@
         "includeFiles": ["api-mock.json"]
       }
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
   ]
 }
