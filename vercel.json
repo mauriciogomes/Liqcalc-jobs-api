@@ -1,18 +1,15 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["api-mock.json"]
-      }
+  "functions": {
+    "api/index.js": {
+      "memory": 512,
+      "maxDuration": 30,
+      "includeFiles": "api-mock.json"
     }
-  ],
+  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "api/index.js"
     }
   ],
   "headers": [
