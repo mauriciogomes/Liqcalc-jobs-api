@@ -7,7 +7,7 @@ server.use(middleware);
 
 server.use(
   jsonServer.rewriter({
-    "/api/*": "/$1"
+    "/*": "/$1"
   })
 )
 server.use(router);
@@ -15,7 +15,7 @@ server.use(router);
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://liqcalc-jobs.vercel.app/')
   res.header('Access-Control-Allow-Headers', '*')
-  res.header('Access-Control-Allow-Methods', 'GET')
+  res.header('Access-Control-Allow-Methods', 'GET,OPTIONS')
   next()
 })
 
