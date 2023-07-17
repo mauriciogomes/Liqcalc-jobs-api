@@ -1,11 +1,14 @@
 {
-  "functions": {
-    "api/index.js": {
-      "memory": 512,
-      "maxDuration": 30,
-      "includeFiles": "api-mock.json"
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["api-mock.json"]
+      }
     }
-  },
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
@@ -14,7 +17,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true"},
         { "key": "Access-Control-Allow-Origin", "value": "*"},
@@ -23,4 +26,6 @@
       ]
     }
   ]
+  
+  
 }
